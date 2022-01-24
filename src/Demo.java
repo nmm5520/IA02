@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 enum ShipmentType {
   FEDEX,
-  UPS
+  UPS,
+  PLANETEXPRESS
 }
 
 public class Demo {
@@ -19,6 +20,7 @@ public class Demo {
     System.out.println("How do you want to ship your order?");
     System.out.println("1) FedEx");
     System.out.println("2) UPS");
+    System.out.println("3) PlanetExpress");
     String userInput = keyboard.nextLine();
     int choiceNum = Integer.parseInt(userInput);
     ShipmentType choice = ShipmentType.values()[choiceNum - 1];
@@ -26,6 +28,7 @@ public class Demo {
     String shipperName = null;
     FederalExpress fedex = null;
     UnitedParcelService ups = null;
+    PlanetExpress planetExpress = null;
     switch (choice) {
       case FEDEX:
         fedex = new FederalExpress();
@@ -36,6 +39,11 @@ public class Demo {
         ups = new UnitedParcelService();
         ups.addProducts(shipment);
         shipperName = ups.companyName();
+        break;
+      case PLANETEXPRESS:
+        planetExpress = new PlanetExpress();
+        planetExpress.addProducts(shipment);
+        shipperName = planetExpress.companyName();
         break;
       default:
         System.out.println("Invalid choice");
@@ -50,6 +58,9 @@ public class Demo {
         break;
       case UPS:
         productList = ups.outputProducts();
+        break;
+      case PLANETEXPRESS:
+        productList = planetExpress.outputProducts();
         break;
       default:
         throw new AssertionError();

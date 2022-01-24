@@ -16,7 +16,7 @@ public class PlanetExpress implements IShipper {
     }
 
     public String outputProducts() {
-        String productString = null;
+        String productString = "";
         for (Product product: products) {
             productString += String.format("%s [Quantity: %s] [%s oz] \n", product.getDescription(), product.getQty(), product.getWeightOunces());
         }
