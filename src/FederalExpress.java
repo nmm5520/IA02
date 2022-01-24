@@ -1,19 +1,19 @@
 import java.util.Stack;
 
-public class FederalExpress {
+public class FederalExpress implements IShipper {
 
   private static final String NAME = "Federal Express";
   private final Stack<Product> items = new Stack<>();
   private int total_qty = 0;
 
-  public void addItems(Shipment shipment) {
+  public void addProducts(Shipment shipment) {
     for (Product item : shipment.getProducts()) {
       items.push(item);
       total_qty += item.getQty();
     }
   }
 
-  public String company() {
+  public String companyName() {
     return NAME;
   }
 

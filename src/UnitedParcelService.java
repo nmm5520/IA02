@@ -1,4 +1,4 @@
-public class UnitedParcelService {
+public class UnitedParcelService implements IShipper {
 
   Product prod1 = null;
   Product prod2 = null;
@@ -18,11 +18,11 @@ public class UnitedParcelService {
     }
   }
 
-  public String compName() {
+  public String companyName() {
     return "UPS";
   }
 
-  public String showProducts() {
+  public String outputProducts() {
     String listOfItems = "";
     listOfItems = listOfItems + prod1.getDescription() + " [" + prod1.getQty() + "]" + System.lineSeparator();
     listOfItems = listOfItems + prod2.getDescription() + " [" + prod2.getQty() + "]" + System.lineSeparator();

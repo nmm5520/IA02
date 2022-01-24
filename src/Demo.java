@@ -29,13 +29,13 @@ public class Demo {
     switch (choice) {
       case FEDEX:
         fedex = new FederalExpress();
-        fedex.addItems(shipment);
-        shipperName = fedex.company();
+        fedex.addProducts(shipment);
+        shipperName = fedex.companyName();
         break;
       case UPS:
         ups = new UnitedParcelService();
         ups.addProducts(shipment);
-        shipperName = ups.compName();
+        shipperName = ups.companyName();
         break;
       default:
         System.out.println("Invalid choice");
@@ -49,7 +49,7 @@ public class Demo {
         productList = fedex.outputProducts();
         break;
       case UPS:
-        productList = ups.showProducts();
+        productList = ups.outputProducts();
         break;
       default:
         throw new AssertionError();
