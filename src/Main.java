@@ -2,8 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO - Put your info here
-        System.out.println("Name: Jo Student");
-        System.out.println("Email: jxs5123@psu.edu");
+        System.out.println("Name: Nikhil Mehta");
+        System.out.println("Email: nmm5520@psu.edu");
         System.out.println("Course: IST 311");
         System.out.println("Assignment: IA02");
         System.out.println();
